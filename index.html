@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ijikelly Daniel Ayomide — Software Engineer</title>
+<!-- Google Fonts: Syne, Space Grotesk, Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:ital,wght@0,400;0,500;0,700;1,400;1,600&amp;family=Syne:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome for clean developer icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS v3 CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#050D15',
+            'midnight-card': '#07121C',
+            'midnight-border': '#152433',
+            'midnight-subtle': '#0B1B2A',
+            accent: '#DEB992',
+            'accent-soft': '#F5E6D3',
+            'text-muted': '#8A99AD',
+            'text-light': '#C5D2E0'
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="base-styling">
+    body {
+      background-color: #050D15;
+      color: #E2E8F0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    ::selection {
+      background-color: #DEB992;
+      color: #050D15;
+    }
+    /* Dot Matrix Pattern Utility */
+    .dot-matrix {
+      background-image: radial-gradient(rgba(222, 185, 146, 0.28) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+    .dot-matrix-dim {
+      background-image: radial-gradient(rgba(138, 153, 173, 0.25) 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+  </style>
+<style data-purpose="custom-typography">
+    .title-editorial {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+    .subtitle-editorial-italic {
+      font-family: 'Space Grotesk', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #DEB992;
+    }
+    .hero-title-syne {
+      font-family: 'Syne', sans-serif;
+      letter-spacing: -0.05em;
+      line-height: 0.88;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-midnight antialiased relative min-h-screen text-text-light selection:bg-accent selection:text-midnight">
+<!-- BEGIN: Left Sticky Social Rail (Desktop) -->
+<aside class="hidden lg:flex fixed left-6 bottom-10 flex-col items-center gap-6 z-40" data-purpose="social-rail">
+<a aria-label="GitHub Profile" class="text-text-muted hover:text-accent transition-colors duration-200" href="https://github.com/Legenddaniel-ai" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-github text-lg"></i>
+</a>
+<a aria-label="X Profile" class="text-text-muted hover:text-accent transition-colors duration-200" href="https://x.com" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-x-twitter text-lg"></i>
+</a>
+<a aria-label="LinkedIn Profile" class="text-text-muted hover:text-accent transition-colors duration-200" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-linkedin-in text-lg"></i>
+</a>
+<a aria-label="WhatsApp Contact" class="text-text-muted hover:text-accent transition-colors duration-200" href="https://wa.me/2348087824544" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-whatsapp text-lg"></i>
+</a>
+<div class="w-[1px] h-14 bg-midnight-border"></div>
+</aside>
+<!-- END: Left Sticky Social Rail -->
+<!-- BEGIN: Navigation Header -->
+<header class="sticky top-0 z-50 backdrop-blur-md bg-midnight/90 border-b border-midnight-border/60">
+<div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+<!-- Brand Logo / Signature -->
+<a class="flex items-center gap-2 group font-mono text-xs tracking-wider text-white" href="#">
+<span class="text-accent text-sm">△</span>
+<span class="font-medium group-hover:text-accent transition-colors">Ijikelly Daniel Ayomide</span>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-6 text-[13px] font-mono tracking-tight text-text-muted">
+<a class="hover:text-accent transition-colors" href="#about"><span class="text-accent/60 mr-1">01</span>About</a>
+<a class="hover:text-accent transition-colors" href="#experience"><span class="text-accent/60 mr-1">02</span>Experience</a>
+<a class="hover:text-accent transition-colors" href="#stack"><span class="text-accent/60 mr-1">03</span>Stack</a>
+<a class="hover:text-accent transition-colors" href="#work"><span class="text-accent/60 mr-1">04</span>Projects</a>
+<a class="hover:text-accent transition-colors" href="#contact"><span class="text-accent/60 mr-1">05</span>Contact</a>
+</nav>
+<!-- Live Lagos Clock & Status Indicator -->
+<div class="flex items-center gap-2 text-xs font-mono text-text-muted">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>Lagos · <span class="text-white font-medium" id="lagos-clock">--:--:--</span></span>
+</div>
+</div>
+</header>
+<!-- END: Navigation Header -->
+<!-- BEGIN: Main Page Content -->
+<main class="max-w-5xl mx-auto px-6 pt-16 pb-28">
+<!-- BEGIN: Hero Section -->
+<section class="relative pt-12 pb-24 border-b border-midnight-border/60" id="hero">
+<!-- Overlapping Geometric Outline Glyphs Decor -->
+<div class="absolute -top-4 -left-4 pointer-events-none opacity-20 hidden md:block">
+<svg fill="none" height="140" stroke="#DEB992" stroke-width="1.5" viewbox="0 0 100 100" width="140">
+<rect height="55" width="55" x="10" y="10"></rect>
+<rect height="55" width="55" x="35" y="35"></rect>
+</svg>
+</div>
+<!-- Dot matrix accent right corner -->
+<div class="absolute right-0 top-12 w-28 h-20 dot-matrix opacity-40 pointer-events-none hidden sm:block"></div>
+<!-- Portfolio Label -->
+<div class="flex items-center gap-2 mb-6">
+<span class="font-mono text-xs tracking-[0.25em] text-accent uppercase font-medium">〈 PORTFOLIO 〉</span>
+</div>
+<!-- Huge Hero Headline -->
+<div class="relative">
+<h1 class="hero-title-syne text-white uppercase text-6xl sm:text-7xl md:text-8xl lg:text-[104px] font-extrabold tracking-tight select-none">
+<span class="block text-accent">SOFTWARE</span>
+<span class="block -mt-1 sm:-mt-3 md:-mt-4">ENGINEER</span>
+</h1>
+</div>
+<!-- Intro Subtitle & Tagline Grid -->
+<div class="mt-14 sm:mt-18 pt-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+<div class="md:max-w-md ml-auto text-right">
+<p class="text-sm md:text-[15px] leading-relaxed text-text-light font-normal tracking-wide uppercase font-mono">
+            I work with startups and engineering teams to build and ship web products, mobile apps, and the backend systems behind them.
+          </p>
+</div>
+</div>
+<!-- Micro Dot Grid Under Headline -->
+<div class="mt-12 flex justify-end">
+<div class="w-32 h-10 dot-matrix-dim opacity-40"></div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: 01 About Section -->
+<section class="py-24 border-b border-midnight-border/60 relative" id="about">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+<!-- Section Index Identifier -->
+<div class="md:col-span-3">
+<div class="flex items-center gap-2 font-mono text-xs tracking-wider uppercase text-text-muted">
+<span class="text-accent">01</span>
+<span>ABOUT</span>
+</div>
+<div class="w-20 h-20 dot-matrix-dim opacity-30 mt-12 hidden md:block"></div>
+</div>
+<!-- Section Narrative -->
+<div class="md:col-span-9 space-y-8">
+<h2 class="title-editorial text-4xl sm:text-5xl md:text-6xl text-white">
+            Beyond the code.<br/>
+<span class="subtitle-editorial-italic">and who I work with.</span>
+</h2>
+<div class="space-y-6 text-text-light font-normal leading-relaxed text-base sm:text-lg max-w-2xl pt-4">
+<p>
+              Most of my work starts the same way: a founder or engineering lead has a product that needs to exist, and a deadline that's already tight. I build web and mobile products with TypeScript across the stack, using React Native for mobile, Next.js for the web, and Node.js for the backend.
+            </p>
+<p class="text-text-muted">
+              A large part of my work is execution and recovery. Sometimes that means building a product from the ground up. Other times it means stepping into a project that's lost momentum, understanding an unfamiliar codebase, making careful technical decisions, and helping the team ship with confidence.
+            </p>
+</div>
+<!-- Action Button: View Resume -->
+<div class="pt-4">
+<a class="inline-flex items-center gap-3 font-mono text-xs tracking-widest uppercase text-accent border border-midnight-border hover:border-accent bg-midnight-card/80 hover:bg-accent hover:text-midnight px-5 py-3 rounded transition-all duration-300" href="mailto:ayomidedaniel451@gmail.com?subject=Request%20Resume%20-%20Ijikelly%20Daniel%20Ayomide">
+<span>View Résumé (PDF)</span>
+<span>→</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 01 About Section -->
+<!-- BEGIN: 02 Experience Section -->
+<section class="py-24 border-b border-midnight-border/60" id="experience">
+<!-- Section Header -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+<div class="md:col-span-3">
+<div class="flex items-center gap-2 font-mono text-xs tracking-wider uppercase text-text-muted">
+<span class="text-accent">02</span>
+<span>EXPERIENCE</span>
+</div>
+</div>
+<div class="md:col-span-9">
+<h2 class="title-editorial text-4xl sm:text-5xl md:text-6xl text-white">
+            Where I've shipped.<br/>
+<span class="subtitle-editorial-italic">and what I built there.</span>
+</h2>
+</div>
+</div>
+<!-- Experience Timeline Rows -->
+<div class="divide-y divide-midnight-border/70 border-t border-midnight-border/70">
+<!-- Experience Item 01 -->
+<article class="py-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group hover:bg-midnight-subtle/30 transition-colors px-2 rounded-lg">
+<div class="md:col-span-1 font-mono text-xs text-text-muted/60 group-hover:text-accent transition-colors">01</div>
+<div class="md:col-span-4">
+<h3 class="text-xl font-bold text-white tracking-tight group-hover:text-accent transition-colors">Software Engineer &amp; Product Lead</h3>
+<p class="font-mono text-xs text-text-muted mt-1">Taskify360 <span class="mx-1">·</span> USA</p>
+</div>
+<div class="md:col-span-5 text-sm text-text-light/90 leading-relaxed font-sans">
+            An all-in-one operating platform connecting service professionals with customers. Integrates scheduling, task tracking, and secure payments in a unified workspace.
+          </div>
+<div class="md:col-span-2 text-right font-mono text-[11px] tracking-tight text-text-muted flex flex-col justify-between">
+<span class="text-accent">JAN 2025 – PRESENT</span>
+<span class="text-[10px] text-text-muted/70 tracking-widest mt-1 uppercase">FULL-TIME</span>
+</div>
+</article>
+<!-- Experience Item 02 -->
+<article class="py-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group hover:bg-midnight-subtle/30 transition-colors px-2 rounded-lg">
+<div class="md:col-span-1 font-mono text-xs text-text-muted/60 group-hover:text-accent transition-colors">02</div>
+<div class="md:col-span-4">
+<h3 class="text-xl font-bold text-white tracking-tight group-hover:text-accent transition-colors">Software Engineer</h3>
+<p class="font-mono text-xs text-text-muted mt-1">Bawse <span class="mx-1">·</span> Spain</p>
+</div>
+<div class="md:col-span-5 text-sm text-text-light/90 leading-relaxed font-sans">
+            An on-demand record label and music tech platform built for independent artists and creators. Developed an all-in-one digital command center featuring dynamic Electronic Press Kits (EPKs) and real-time performance analytics.
+          </div>
+<div class="md:col-span-2 text-right font-mono text-[11px] tracking-tight text-text-muted flex flex-col justify-between">
+<span>MAY 2022 – JAN 2025</span>
+<span class="text-[10px] text-text-muted/70 tracking-widest mt-1 uppercase">FULL-TIME</span>
+</div>
+</article>
+<!-- Experience Item 03 -->
+<article class="py-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group hover:bg-midnight-subtle/30 transition-colors px-2 rounded-lg">
+<div class="md:col-span-1 font-mono text-xs text-text-muted/60 group-hover:text-accent transition-colors">03</div>
+<div class="md:col-span-4">
+<h3 class="text-xl font-bold text-white tracking-tight group-hover:text-accent transition-colors">Software Engineer</h3>
+<p class="font-mono text-xs text-text-muted mt-1">Freelance <span class="mx-1">·</span> Remote</p>
+</div>
+<div class="md:col-span-5 text-sm text-text-light/90 leading-relaxed font-sans">
+            Web and mobile apps for SaaS, and e-commerce clients. Improved core web vitals and increasing user engagement while maintaining a shared library of React and React Native components across multiple client projects.
+          </div>
+<div class="md:col-span-2 text-right font-mono text-[11px] tracking-tight text-text-muted flex flex-col justify-between">
+<span>OCT 2021 – JAN 2025</span>
+<span class="text-[10px] text-text-muted/70 tracking-widest mt-1 uppercase">FREELANCE</span>
+</div>
+</article>
+<!-- Experience Item 04 -->
+<article class="py-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group hover:bg-midnight-subtle/30 transition-colors px-2 rounded-lg">
+<div class="md:col-span-1 font-mono text-xs text-text-muted/60 group-hover:text-accent transition-colors">04</div>
+<div class="md:col-span-4">
+<h3 class="text-xl font-bold text-white tracking-tight group-hover:text-accent transition-colors">Frontend Developer</h3>
+<p class="font-mono text-xs text-text-muted mt-1">WosAm Arena <span class="mx-1">·</span> Lagos</p>
+</div>
+<div class="md:col-span-5 text-sm text-text-light/90 leading-relaxed font-sans">
+            A digital hub for exploring venue facilities, booking lodging, and planning entertainment experiences.
+          </div>
+<div class="md:col-span-2 text-right font-mono text-[11px] tracking-tight text-text-muted flex flex-col justify-between">
+<span>JUN 2022 – FEB 2023</span>
+<span class="text-[10px] text-text-muted/70 tracking-widest mt-1 uppercase">FULL-TIME</span>
+</div>
+</article>
+</div>
+</section>
+<!-- END: 02 Experience Section -->
+<!-- BEGIN: 03 Stack Section -->
+<section class="py-24 border-b border-midnight-border/60 relative" id="stack">
+<!-- Section Header -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+<div class="md:col-span-3">
+<div class="flex items-center gap-2 font-mono text-xs tracking-wider uppercase text-text-muted">
+<span class="text-accent">03</span>
+<span>STACK</span>
+</div>
+</div>
+<div class="md:col-span-9">
+<h2 class="title-editorial text-4xl sm:text-5xl md:text-6xl text-white">
+            What I build with.<br/>
+<span class="subtitle-editorial-italic">tools that bend to the product.</span>
+</h2>
+</div>
+</div>
+<!-- Overlapping outline decor -->
+<div class="absolute -left-6 bottom-16 pointer-events-none opacity-20 hidden lg:block">
+<svg fill="none" height="120" stroke="#DEB992" stroke-width="1.5" viewbox="0 0 100 100" width="120">
+<rect height="45" width="45" x="15" y="15"></rect>
+<rect height="45" width="45" x="35" y="35"></rect>
+</svg>
+</div>
+<!-- Stack Grid Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Stack Box: LANGUAGES -->
+<div class="bg-midnight-card border border-midnight-border/80 rounded-lg p-6 sm:p-7 hover:border-midnight-border transition-colors">
+<h3 class="font-mono text-xs font-semibold uppercase tracking-widest text-text-muted mb-5">LANGUAGES</h3>
+<div class="flex flex-wrap gap-2.5">
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-js text-yellow-400"></i> TypeScript
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-square-js text-yellow-300"></i> JavaScript
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-golang text-cyan-400"></i> Go
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-java text-orange-400"></i> Java
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-python text-blue-400"></i> Python
+            </span>
+</div>
+</div>
+<!-- Stack Box: FRAMEWORKS -->
+<div class="bg-midnight-card border border-midnight-border/80 rounded-lg p-6 sm:p-7 hover:border-midnight-border transition-colors">
+<h3 class="font-mono text-xs font-semibold uppercase tracking-widest text-text-muted mb-5">FRAMEWORKS</h3>
+<div class="flex flex-wrap gap-2.5">
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-react text-cyan-400"></i> React Native
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-cube text-slate-300"></i> Expo
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-bolt text-white"></i> Next.js
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-react text-sky-400"></i> React.js
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-node-js text-emerald-400"></i> Node.js
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-server text-stone-300"></i> Express.js
+            </span>
+</div>
+</div>
+<!-- Stack Box: DATABASES & CLOUD -->
+<div class="bg-midnight-card border border-midnight-border/80 rounded-lg p-6 sm:p-7 hover:border-midnight-border transition-colors">
+<h3 class="font-mono text-xs font-semibold uppercase tracking-widest text-text-muted mb-5">DATABASES &amp; CLOUD</h3>
+<div class="flex flex-wrap gap-2.5">
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-leaf text-green-500"></i> MongoDB
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-fire text-amber-500"></i> Firebase
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-bolt-lightning text-emerald-400"></i> Supabase
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-database text-sky-400"></i> PostgreSQL
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-aws text-orange-400"></i> AWS
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-cubes text-teal-400"></i> Prisma
+            </span>
+</div>
+</div>
+<!-- Stack Box: DESIGN & TOOLS -->
+<div class="bg-midnight-card border border-midnight-border/80 rounded-lg p-6 sm:p-7 hover:border-midnight-border transition-colors">
+<h3 class="font-mono text-xs font-semibold uppercase tracking-widest text-text-muted mb-5">DESIGN &amp; TOOLS</h3>
+<div class="flex flex-wrap gap-2.5">
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-wind text-teal-400"></i> Tailwind CSS
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-palette text-pink-400"></i> Styled Components
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-figma text-violet-400"></i> Figma
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-wordpress text-blue-400"></i> WordPress
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-solid fa-code text-indigo-400"></i> Webflow
+            </span>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-midnight border border-midnight-border text-white hover:border-accent/40 transition-colors">
+<i class="fa-brands fa-github text-white"></i> GitHub
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 03 Stack Section -->
+<!-- BEGIN: 04 Selected Work Section -->
+<section class="py-24 border-b border-midnight-border/60" id="work">
+<!-- Section Header -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+<div class="md:col-span-3">
+<div class="flex items-center gap-2 font-mono text-xs tracking-wider uppercase text-text-muted">
+<span class="text-accent">04</span>
+<span>SELECTED WORK</span>
+</div>
+</div>
+<div class="md:col-span-9">
+<h2 class="title-editorial text-4xl sm:text-5xl md:text-6xl text-white">
+            Things I've shipped.<br/>
+<span class="subtitle-editorial-italic">a few from the archive.</span>
+</h2>
+</div>
+</div>
+<!-- Project Showcase Cards -->
+<div class="divide-y divide-midnight-border/70 border-t border-midnight-border/70">
+<!-- Project 01: Latch -->
+<article class="py-12 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group">
+<div class="md:col-span-1 font-mono text-xs text-text-muted/60 group-hover:text-accent transition-colors">01</div>
+<div class="md:col-span-4">
+<h3 class="text-3xl font-extrabold text-white tracking-tight group-hover:text-accent transition-colors font-syne">
+              Latch
+            </h3>
+</div>
+<div class="md:col-span-5 space-y-4">
+<p class="text-sm text-text-light/90 leading-relaxed font-sans">
+              Debugging webhooks locally is slow because incoming request payloads disappear after delivery. Latch captures incoming events, persists their full state, and lets you replay them with original headers intact. An Upstash Redis queue decouples ingestion from storage for fast response times, while Server-Sent Events stream live payloads to the browser without polling.
+            </p>
+<div class="font-mono text-[11px] text-text-muted tracking-wider uppercase">
+              NEXT.JS <span class="mx-1.5 text-midnight-border">/</span> NEONDB <span class="mx-1.5 text-midnight-border">/</span> UPSTASH REDIS
+            </div>
+</div>
+<div class="md:col-span-2 text-right flex flex-col justify-between h-full font-mono">
+<span class="text-[11px] text-text-muted tracking-wider">2024</span>
+<div class="text-[10px] tracking-widest text-text-muted/70 uppercase mb-2">DESIGN &amp; ENGINEERING</div>
+<a class="inline-flex items-center justify-end gap-1.5 text-xs text-accent hover:underline" href="https://github.com/Legenddaniel-ai" rel="noopener noreferrer" target="_blank">
+<span>VIEW</span>
+<span class="text-[10px]">↗</span>
+</a>
+</div>
+</article>
+<!-- Project 02: Axiom -->
+<article class="py-12 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group">
+<div class="md:col-span-1 font-mono text-xs text-text-muted/60 group-hover:text-accent transition-colors">02</div>
+<div class="md:col-span-4">
+<h3 class="text-3xl font-extrabold text-white tracking-tight group-hover:text-accent transition-colors font-syne">
+              Axiom
+            </h3>
+</div>
+<div class="md:col-span-5 space-y-4">
+<p class="text-sm text-text-light/90 leading-relaxed font-sans">
+              Multi-step AI workflows often fail when context drifts across repeated LLM prompts. Axiom is a research agent that coordinates multi-step Gemini workflows using a state machine engine. Strict schema validation enforces structured JSON outputs at each step, preventing prompt drift during complex analytical queries.
+            </p>
+<div class="font-mono text-[11px] text-text-muted tracking-wider uppercase">
+              NEXT.JS <span class="mx-1.5 text-midnight-border">/</span> TYPESCRIPT <span class="mx-1.5 text-midnight-border">/</span> GEMINI API
+            </div>
+</div>
+<div class="md:col-span-2 text-right flex flex-col justify-between h-full font-mono">
+<span class="text-[11px] text-text-muted tracking-wider">2024</span>
+<div class="text-[10px] tracking-widest text-text-muted/70 uppercase mb-2">DESIGN &amp; ENGINEERING</div>
+<a class="inline-flex items-center justify-end gap-1.5 text-xs text-accent hover:underline" href="https://github.com/Legenddaniel-ai" rel="noopener noreferrer" target="_blank">
+<span>VIEW</span>
+<span class="text-[10px]">↗</span>
+</a>
+</div>
+</article>
+<!-- Project 03: Bawse -->
+<article class="py-12 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group">
+<div class="md:col-span-1 font-mono text-xs text-text-muted/60 group-hover:text-accent transition-colors">03</div>
+<div class="md:col-span-4">
+<h3 class="text-3xl font-extrabold text-white tracking-tight group-hover:text-accent transition-colors font-syne">
+              Bawse
+            </h3>
+</div>
+<div class="md:col-span-5 space-y-4">
+<p class="text-sm text-text-light/90 leading-relaxed font-sans">
+              Independent artists need fast, reliable web profiles to share with music managers and talent bookers. I built dynamic Electronic Press Kits and analytics dashboards for Bawse using Next.js and React Native. Migrating the web platform to Next.js improved page load speeds and increased organic search traffic by 50%.
+            </p>
+<div class="font-mono text-[11px] text-text-muted tracking-wider uppercase">
+              NEXT.JS <span class="mx-1.5 text-midnight-border">/</span> REACT NATIVE <span class="mx-1.5 text-midnight-border">/</span> SCSS
+            </div>
+</div>
+<div class="md:col-span-2 text-right flex flex-col justify-between h-full font-mono">
+<span class="text-[11px] text-text-muted tracking-wider">2022 - 2025</span>
+<div class="text-[10px] tracking-widest text-text-muted/70 uppercase mb-2">FRONTEND ENGINEERING</div>
+<a class="inline-flex items-center justify-end gap-1.5 text-xs text-accent hover:underline" href="https://github.com/Legenddaniel-ai" rel="noopener noreferrer" target="_blank">
+<span>VIEW</span>
+<span class="text-[10px]">↗</span>
+</a>
+</div>
+</article>
+</div>
+<!-- View All Projects Button -->
+<div class="mt-14 text-center">
+<a class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-text-light border border-midnight-border hover:border-accent hover:text-accent px-6 py-3 rounded transition-all" href="https://github.com/Legenddaniel-ai" rel="noopener noreferrer" target="_blank">
+<span>VIEW ALL PROJECTS</span>
+<span>→</span>
+</a>
+</div>
+</section>
+<!-- END: 04 Selected Work Section -->
+<!-- BEGIN: Principles Section -->
+<section class="py-24 border-b border-midnight-border/60" id="principles">
+<!-- Section Header -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+<div class="md:col-span-3">
+<div class="flex items-center gap-2 font-mono text-xs tracking-wider uppercase text-text-muted">
+<span>PRINCIPLES</span>
+</div>
+</div>
+<div class="md:col-span-9">
+<h2 class="title-editorial text-4xl sm:text-5xl md:text-6xl text-white">
+            How I think.<br/>
+<span class="subtitle-editorial-italic">principles that shape the work.</span>
+</h2>
+</div>
+</div>
+<!-- Principles 2x2 Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<!-- Principle 01 -->
+<div class="space-y-2">
+<div class="font-mono text-xs text-accent/80 font-medium">01</div>
+<h3 class="text-xl font-bold text-white tracking-tight">Ship with intention</h3>
+<p class="text-sm text-text-muted leading-relaxed font-sans">
+            Before writing code, I ask what problem it solves and who it solves it for. If I can't answer both, the feature doesn't get built.
+          </p>
+</div>
+<!-- Principle 02 -->
+<div class="space-y-2">
+<div class="font-mono text-xs text-accent/80 font-medium">02</div>
+<h3 class="text-xl font-bold text-white tracking-tight">Systems over pages</h3>
+<p class="text-sm text-text-muted leading-relaxed font-sans">
+            I think in components, data contracts, and module boundaries rather than just screens. Good architecture lets the product grow without requiring rewrites.
+          </p>
+</div>
+<!-- Principle 03 -->
+<div class="space-y-2">
+<div class="font-mono text-xs text-accent/80 font-medium">03</div>
+<h3 class="text-xl font-bold text-white tracking-tight">Design is engineering</h3>
+<p class="text-sm text-text-muted leading-relaxed font-sans">
+            I don't hand off between design and code. I own the full surface, from the database schema to the hover state. If I designed it, I built it.
+          </p>
+</div>
+<!-- Principle 04 -->
+<div class="space-y-2">
+<div class="font-mono text-xs text-accent/80 font-medium">04</div>
+<h3 class="text-xl font-bold text-white tracking-tight">Move fast, stay clean</h3>
+<p class="text-sm text-text-muted leading-relaxed font-sans">
+            I write code I'd want to inherit: readable, tested, documented. When I set up shared component libraries, other projects reuse them for months. Technical debt is a choice, not a given.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: Principles Section -->
+<!-- BEGIN: 05 Contact Section -->
+<section class="pt-24 pb-12" id="contact">
+<!-- Section Header -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+<div class="md:col-span-3">
+<div class="flex items-center gap-2 font-mono text-xs tracking-wider uppercase text-text-muted">
+<span class="text-accent">05</span>
+<span>CONTACT</span>
+</div>
+</div>
+<div class="md:col-span-9">
+<h2 class="title-editorial text-4xl sm:text-5xl md:text-6xl text-white">
+            Get in touch.<br/>
+<span class="subtitle-editorial-italic">for projects, roles, or questions.</span>
+</h2>
+</div>
+</div>
+<!-- Contact Interaction Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Left Side: Copy and Links -->
+<div class="md:col-span-5 space-y-6">
+<p class="text-base text-text-light leading-relaxed">
+            Building a product, hiring for a role, or recovering a stalled codebase? Send me a message or use the direct links below to connect.
+          </p>
+<div class="pt-2 space-y-3 font-mono text-xs tracking-wider uppercase">
+<div>
+<a class="text-accent hover:underline flex items-center gap-2" href="mailto:ayomidedaniel451@gmail.com">
+<i class="fa-regular fa-envelope"></i> ayomidedaniel451@gmail.com
+              </a>
+</div>
+<div>
+<a class="text-white hover:text-accent transition-colors flex items-center gap-2" href="https://wa.me/2348087824544" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-whatsapp text-emerald-400"></i> +234 808 782 4544 (WhatsApp)
+              </a>
+</div>
+<div>
+<a class="text-text-muted hover:text-white transition-colors flex items-center gap-2" href="https://github.com/Legenddaniel-ai" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-github"></i> github.com/Legenddaniel-ai ↗
+              </a>
+</div>
+</div>
+<div class="pt-6 flex flex-wrap gap-4 font-mono text-xs tracking-wider text-text-muted uppercase">
+<a class="hover:text-accent" href="mailto:ayomidedaniel451@gmail.com?subject=Portfolio%20Inquiry">RÉSUMÉ ↗</a>
+<span>·</span>
+<a class="hover:text-accent" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LINKEDIN ↗</a>
+<span>·</span>
+<a class="hover:text-accent" href="https://github.com/Legenddaniel-ai" rel="noopener noreferrer" target="_blank">GITHUB ↗</a>
+</div>
+</div>
+<!-- Right Side: Contact Form -->
+<div class="md:col-span-7">
+<form class="space-y-6" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you, Ijikelly Daniel Ayomide will get back to you shortly!');">
+<div>
+<label class="block font-mono text-[11px] uppercase tracking-wider text-text-muted mb-2" for="name">NAME</label>
+<input class="w-full bg-transparent border-0 border-b border-midnight-border focus:border-accent focus:ring-0 px-0 py-2.5 text-sm text-white placeholder-text-muted/40 transition-colors" id="name" placeholder="Your name" required="" type="text"/>
+</div>
+<div>
+<label class="block font-mono text-[11px] uppercase tracking-wider text-text-muted mb-2" for="email">EMAIL</label>
+<input class="w-full bg-transparent border-0 border-b border-midnight-border focus:border-accent focus:ring-0 px-0 py-2.5 text-sm text-white placeholder-text-muted/40 transition-colors" id="email" placeholder="your@email.com" required="" type="email"/>
+</div>
+<div>
+<label class="block font-mono text-[11px] uppercase tracking-wider text-text-muted mb-2" for="message">MESSAGE</label>
+<textarea class="w-full bg-transparent border-0 border-b border-midnight-border focus:border-accent focus:ring-0 px-0 py-2.5 text-sm text-white placeholder-text-muted/40 transition-colors resize-none" id="message" placeholder="Tell me about your project or role..." required="" rows="4"></textarea>
+</div>
+<div class="pt-4">
+<button class="inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-widest font-semibold bg-accent text-midnight hover:bg-accent-soft transition-colors rounded" type="submit">
+<span>SEND MESSAGE</span>
+<span>→</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- END: 05 Contact Section -->
+</main>
+<!-- END: Main Page Content -->
+<!-- BEGIN: Page Footer -->
+<footer class="border-t border-midnight-border/60 py-10 bg-midnight text-center">
+<div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-text-muted">
+<div class="flex items-center gap-2">
+<span class="text-accent">△</span>
+<span>© 2026 Ijikelly Daniel Ayomide</span>
+</div>
+<div class="text-[11px] text-text-muted/80">
+        Engineered with TypeScript &amp; precision in Lagos, Nigeria.
+      </div>
+</div>
+</footer>
+<!-- END: Page Footer -->
+<!-- BEGIN: Interactive Clock Script -->
+<script data-purpose="lagos-clock-updater">
+    function updateLagosClock() {
+      const clockElement = document.getElementById('lagos-clock');
+      if (!clockElement) return;
+      
+      const now = new Date();
+      // Lagos is West Africa Time (WAT) which is UTC+1 (no daylight saving)
+      const options = {
+        timeZone: 'Africa/Lagos',
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      
+      try {
+        clockElement.textContent = new Intl.DateTimeFormat('en-GB', options).format(now);
+      } catch (e) {
+        // Fallback calculation for UTC+1
+        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+        const lagosTime = new Date(utc + (3600000 * 1));
+        const hours = String(lagosTime.getHours()).padStart(2, '0');
+        const minutes = String(lagosTime.getMinutes()).padStart(2, '0');
+        const seconds = String(lagosTime.getSeconds()).padStart(2, '0');
+        clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+    }
+
+    // Initialize clock and update every second
+    updateLagosClock();
+    setInterval(updateLagosClock, 1000);
+  </script>
+<!-- END: Interactive Clock Script -->
+</body></html>
